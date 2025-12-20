@@ -191,3 +191,12 @@ footer {
 html{
     scroll-padding-top: 140px;
 }
+
+
+@media screen (max-width: 720px) {
+    body {
+        background-color:blue;
+        
+    }
+
+}
