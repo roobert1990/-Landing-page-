@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(Imagens/matrix.gif);
+    background-image: url(Imagens/foto.jfif);
     display: flex;
     margin: 0px;
     flex: 1 1 100vw;
@@ -195,8 +195,7 @@ html{
 
 @media screen (max-width: 720px) {
     body {
-        background-color:blue;
-        
+        width: 600px;
     }
 
 }
