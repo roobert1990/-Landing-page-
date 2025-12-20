@@ -179,7 +179,7 @@ ul li a {
 
 footer {
     display: block;
-    background-color: black;
+    background-color: rgb(27, 26, 26);
     color: white;
     flex: 1 1 100vw;
     position: relative;
