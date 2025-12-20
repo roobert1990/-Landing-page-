@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(imagens/matrix.gif);
+    background-image: url(Imagens/matrix.gif);
     display: flex;
     margin: 0px;
     flex: 1 1 100vw;
