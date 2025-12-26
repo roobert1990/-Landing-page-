@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Landing page</title>
 </head>
 <body>
     <header>
-        <img class="foto_perfil" src="Imagens/foto.jfif">
-        <h1 class="nome">Robert Soares da Silva</h1><br>
+        <img class="foto_perfil" src="Imagens/foto.jfif" alt="Foto de Perfil">
+        <h1>Robert Soares da Silva</h1>
         <nav>
-            <a class="link_nav" href="#home">Início</a>
-            <a class="link_nav" href="#sobre_mim">Sobre mim</a>
-            <a class="link_nav" href="#habilidades">Habilidades</a>
-            <a class="link_nav" href="#projetos">Projetos</a>
-            <a class="link_nav" href="#contato">Contato</a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+               <li><a class="link_nav" href="#home">Início</a></li>
+               <li><a class="link_nav" href="#sobre_mim">Sobre mim</a></li>
+               <li><a class="link_nav" href="#habilidades">Habilidades</a></li>
+               <li><a class="link_nav" href="#projetos">Projetos</a></li>
+               <li><a class="link_nav" href="#contato">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <div class="inicio">
             <div id="home">
-                <img class="imagem" src="Imagens/efeito matrix.gif">
+                <img class="imagem" src="Imagens/imagem2.png" alt="Imagem Principal">
             </div>
             <div class="frase">
                 <h2>"Não apenas codificando, mas moldando a própria mente para pensar como um sistema."</h2>
@@ -41,7 +49,7 @@
             <section id="habilidades">
                <h1>Habilidades</h1><br>
                <ul class="lista_hab">
-                <li class="lista_hab"><strong>Desenvolvimento Frond-end:</strong> HTML, CSS e JavaScript.</li>
+                <li class="lista_hab"><strong>Desenvolvimento Front-end:</strong> HTML, CSS e JavaScript.</li>
                 <li class="lista_hab"><strong>Desenvolvimento Back-end:</strong> C, C++, Java e Python.</li>
                 <li class="lista_hab"><strong>Metodologias:</strong> Scrum, Kanban e Git </li>
                 <li class="lista_hab"><strong>Cloud:</strong> AWS e Google Cloud</li>
@@ -53,33 +61,42 @@
             <section>
                <h1 id="projetos">Projetos</h1><br>
                <ul>
-                <ui>
+                <li>
                     <h3>Sistema de Agendamento Online para Serviços</h3><br>
                     <h4>Descrição:</h4>
                     <p>Este projeto consiste em desenvolver uma plataforma onde empresas ou profissionais autônomos podem oferecer seus serviços e clientes podem agendar horários online. Pode ser adaptado para salões de beleza, clínicas médicas, consultores, ou qualquer tipo de serviço que exija agendamento.</p>
-                </ui><br>
-                <ui>
+                </li>
+                <li>
                     <h3>Jogo de Quiz Interativo</h3><br>
                     <h4>Descrição:</h4>
                     <p>Desenvolver um jogo de quiz que pode ser jogado individualmente ou em grupo. Este projeto é uma ótima forma de explorar conceitos de lógica de jogo, interface do usuário e, potencialmente, multiplayer em tempo real.</p>
-                </ui>
+                </li>
                </ul>
             </section>
         </div>
     </main>
-
-    <aside>
-        <h1 class="extras">Siga-me:</h1><br>
-        <ul>
-            <li class="link_aside"><img src="Imagens/in.png" width="20"><a href="https://www.linkedin.com/in/robert-soares-da-silva-472128115/" target="_blank">  Linkedin</a></li>
-            <li class="link_aside"><img src="Imagens/instagram.jfif" width="20"><a href="https://www.instagram.com/robert_rsds/?hl=pt-br" target="_blank"> Instagram</a></li>
-            <li class="link_aside"><img src="Imagens/github.webp" width="20"><a href="https://github.com/roobert1990" target="_blank"> Github</a></li>
-        </ul>
-    </aside>
     <footer id="contato">
         <h2>Contato:</h2><br>
         <a href="mailto:robert.rsds@gmail.com">robert.rsds@gmail.com</a><br><br>
-        © 2025 Robert Sores
+        <aside>
+        <h1 class="extras">Siga-me:</h1><br>
+        <ul>
+            <li class="link_aside"><a href="https://www.linkedin.com/in/robert-soares-da-silva-472128115/" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+            <li class="link_aside"><a href="https://www.instagram.com/robert_rsds/?hl=pt-br" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+            <li class="link_aside"><a href="https://github.com/roobert1990" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
+        </ul>
+    </aside>
+        © 2025 Robert Soares
     </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        })
+    </script>
 </body>
 </html>

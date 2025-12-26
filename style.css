@@ -2,41 +2,55 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    
 }
 
 body{
-    background-image: url(Imagens/foto.jfif);
+    background-image: url(Imagens/matrix-matrix-code.gif);
     display: flex;
     margin: 0px;
     flex: 1 1 100vw;
     flex-wrap: wrap;
-    padding-top: 140px;
+    padding-top: 100px;
     font-family: Arial, Helvetica, sans-serif;
     
 }
 
-header, nav, main, aside, footer{
-    display: flex;
-    margin: 0px;
-}
-
 header {
-    height:140px;
+    background-color: #1f2937; /* Cor moderna (cinza escuro) */
+    height: 80px; /* Altura mais compacta */
     position: fixed;
-    top: 0;
+    top:0px;
     width: 100%;
     z-index: 1000;
+    display: flex; /* Alinha logo, nome e menu */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 40px; /* Espaçamento nas laterais */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
 
-nav {
+nav ul {
+    /* background-color: aqua; Removido para ficar transparente */
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    position: relative;
-    top:40px;
-    height: 50px;
-    margin: 0 auto;
+    gap: 20px; /* Espaço entre os links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos do Hambúrguer (Escondido no Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
 }
 
 .imagem{
@@ -52,23 +66,18 @@ nav {
 
 
 .foto_perfil{
-    width:100px;
-    height: 100px;
-    position: relative;
-    border-radius: 100px;
-    left: 20px;
-    top: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover;
+    margin-right: 15px;
 }
 
-.nome{
-    position: relative;
-    text-decoration: none;
-    text-align: center;
+h1{
     font-family:sans-serif;
-    font-size:40px;
+    font-size: 24px;
     color: white;
-    width: 500px;
-    top: 50px;
+    margin-right: auto; /* Empurra o menu (nav) para a direita */
 }
 
 .frase{
@@ -86,48 +95,42 @@ nav {
 .link_nav{
     color: white;
     text-decoration: none;
-    padding:20px;
+    padding: 10px 15px;
     font-family:sans-serif;
-    font-size: 19px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Animação suave */
 }
 
 .link_nav:hover, .link_aside:hover {
-    background-color:green;
-    border-radius: 80px;
+    background-color:rgb(101, 104, 160);
 }
-
-.sobreMim{
-    height: 550px;
-    width: 100%;
-    padding: 50px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    top: 50px;;
-}
-
 
 main {
-    flex: 20 1 400px;
-    position: relative;
-    height: 1580px;
-    flex-wrap: wrap;
-}
-    
-.hab{
+    display: flex;
+    flex-direction: column; /* Empilha as seções verticalmente */
+    align-items: center; /* Centraliza as seções na tela */
     width: 100%;
-    height: 470px;
-    position: relative;
-    left: 150px;
-    
+    height: auto; /* Altura automática baseada no conteúdo */
+    gap: 150px; /* Aumenta bastante a distância entre as seções */
+    padding-bottom:50px;
 }
 
-.proj {
-    display: flex;
-    flex-wrap: wrap;
+/* Estilo unificado para os cartões das seções */
+.sobreMim, .hab, .proj {
+    background-color: rgba(16, 6, 102, 0.219); /* Fundo Azul Transparente */
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco (opcional, mas moderno) */
+    width: 70%; /* Largura no Desktop */
+    padding: 40px;
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Sombra para destacar */
     color: white;
-    position: relative;
-    left: 150px;
+    min-height: 90vh; /* Faz a seção ocupar 90% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    /* Resetando posições antigas */
+    position: static;
 }
 
 .lista_hab {
@@ -139,7 +142,7 @@ section{
     position: relative;
     color: white;
     width: 100%;
-    height: 470px;
+    height: auto;
 }
 
 aside {
@@ -160,9 +163,18 @@ aside {
 }
 
 .link_aside {
-    padding: 4px;
-    border-radius: 50px;
-    width: 150px;
+    padding: 10px;
+    width: auto; /* Ajusta ao conteúdo */
+}
+
+.link_aside a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre ícone e texto */
+}
+
+.link_aside i {
+    font-size: 24px; /* Tamanho moderno para o ícone */
 }
 
 ul {
@@ -193,9 +205,117 @@ html{
 }
 
 
-@media screen (max-width: 720px) {
+@media screen and (max-width: 710px){
+
     body {
-        width: 600px;
+        background-image: url(/Imagens/matrix-matrix-code.gif);
+        padding-top: 0; /* Remove o espaço do header fixo */
+        flex-direction: column;
     }
 
+    header {
+        position: fixed; /* Mantém fixo no topo */
+        top: 0;
+        height: 70px;
+        flex-direction: row; /* Volta para linha para alinhar logo e hambúrguer */
+        justify-content: space-between; /* Separa os itens */
+        padding: 0 20px;
+        width: 100%;
+        background-color: #1f2937;
+    }
+
+    h1 {
+        display: none; /* Oculta o nome no mobile para economizar espaço */
+    }
+
+    .hamburger {
+        display: block; /* Mostra o hambúrguer no mobile */
+    }
+
+    /* Animação do X no hambúrguer */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Esconde o menu fora da tela à esquerda */
+        top: 70px; /* Logo abaixo do header */
+        flex-direction: column;
+        background-color: #1f2937;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        transition: 0.3s; /* Efeito de deslize suave */
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0; /* Traz o menu para a tela */
+    }
+
+    main {
+        width: 100%;
+        margin-top: 80px; /* Compensa o header fixo */
+        height: auto; 
+        flex: none;
+        gap: 80px; /* Distância ajustada para mobile */
+    }
+
+    /* Resetando posicionamentos fixos do desktop para fluir em coluna */
+    .sobreMim, .hab, .proj {
+        width: 90%; /* Ocupa mais espaço na tela do celular */
+        padding: 20px;
+        min-height: 80vh; /* Ocupa a tela no mobile também */
+        text-align: center;
+    }
+
+    .imagem {
+        position: static;
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto 20px auto;
+        display: block;
+    }
+
+    .frase {
+        position: static;
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    aside {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        padding: 30px 10px;
+        background-color: #1f2937; /* Integra visualmente com o rodapé */
+    }
+
+    aside ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .link_aside {
+        width: auto;
+    }
+
+    footer {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
 }
