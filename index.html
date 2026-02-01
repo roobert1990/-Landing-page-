@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Landing page</title>
+    <title>Landing Page Robert Soares</title>
 </head>
 <body>
     <header>
-        <img class="foto_perfil" src="Imagens/foto.jfif" alt="Foto de Perfil">
         <h1>Robert Soares da Silva</h1>
         <nav>
             <div class="hamburger">
@@ -30,14 +30,14 @@
     <main>
         <div class="inicio">
             <div id="home">
-                <img class="imagem" src="Imagens/imagem2.png" alt="Imagem Principal">
+                <img class="imagem" src="Imagens/foto2_sem_fundo-removebg-preview.png" alt="Imagem Principal">
             </div>
             <div class="frase">
                 <h2>"Não apenas codificando, mas moldando a própria mente para pensar como um sistema."</h2>
             </div>
         </div>
-
         <div class="sobreMim">
+            <br><br>
             <section id="sobre_mim">
                 <br><h1>Sobre mim</h1><br><br>
                 <p>Sou profissional de TI com mais de 5 anos de experiência, especializado em hardware e infraestrutura. Minha expertise abrange desde o diagnóstico e manutenção avançada de sistemas e redes, até a montagem, configuração e otimização de equipamentos de alto desempenho.</p><br>
@@ -45,6 +45,21 @@
             </section>
         </div>
 
+        <div class="area_contato" id="contato">
+            <section>
+                <h2>Entre em contato</h2>
+                <form>
+                    <label id="nome" for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br>
+                    <label id="mail" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label id="mensage" for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea><br>
+                    <button id="botao_enviar" type="submit">Enviar</button>
+                </form>
+                <br><br>
+            </section>
+        </div>
         <div class="hab">
             <section id="habilidades">
                <h1>Habilidades</h1><br>
@@ -54,6 +69,7 @@
                 <li class="lista_hab"><strong>Metodologias:</strong> Scrum, Kanban e Git </li>
                 <li class="lista_hab"><strong>Cloud:</strong> AWS e Google Cloud</li>
                </ul>
+               <br><br>
             </section>
         </div>
 
@@ -75,28 +91,21 @@
             </section>
         </div>
     </main>
-    <footer id="contato">
-        <h2>Contato:</h2><br>
-        <a href="mailto:robert.rsds@gmail.com">robert.rsds@gmail.com</a><br><br>
+    <footer>
+        <h2>Contato:</h2>
+        <a href="mailto:robert.rsds@gmail.com">robert.rsds@gmail.com</a>
+        <br><br>
         <aside>
-        <h1 class="extras">Siga-me:</h1><br>
         <ul>
-            <li class="link_aside"><a href="https://www.linkedin.com/in/robert-soares-da-silva-472128115/" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-            <li class="link_aside"><a href="https://www.instagram.com/robert_rsds/?hl=pt-br" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-            <li class="link_aside"><a href="https://github.com/roobert1990" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
+            <li class="link_aside"><a href="https://www.linkedin.com/in/robert-soares-da-silva-472128115/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li class="link_aside"><a href="https://www.instagram.com/robert_rsds/?hl=pt-br" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="link_aside"><a href="https://github.com/roobert1990" target="_blank"><i class="fa-brands fa-github"></i></a></li>
         </ul>
     </aside>
-        © 2025 Robert Soares
+        <br><br>
+        <p>© 2025 Robert Soares</p>
+        <p>Todos os direitos reservados</p>
+        <p>Desenvolvido por Robert Soares</p>
     </footer>
-
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        })
-    </script>
 </body>
 </html>
